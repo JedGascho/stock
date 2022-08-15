@@ -1,1 +1,0 @@
-'SGU', 'MMLP', 'TGS', 'RNGR', 'CSAN', 'LPG', 'GPRK', 'GPP', 'SHLX', 'BPT', 'MVO', 'CDEV', 'WTI', 'YPF', 'SD', 'PRT', 'SHI', 'TALO', 'BSM', 'EC', 'PBR', 'PBFX', 'NOA', 'DLNG', 'EPSN', 'HMLP', 'VOC', 'ICD', 'ET', 'TGA', 'HEP', 'NESR', 'CVE', 'PBR.A', 'EGY', 'ERF', 'CPG', 'VIST', 'ESTE'
