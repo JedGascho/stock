@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from organizer import organize
 
 #input UNORGANIZED csv file, in the format ("symbol", "peRatio", "stockPrice", "pbRatio")
-organize.main('screener.csv')
+column = organize.main('screener.csv')
 
 #organized file
 file = 'stock_list.csv'
@@ -22,9 +22,10 @@ with open(file, 'r') as f:
             plt.annotate(row[1], (float(row[2]), float(row[4])), textcoords="offset points", xytext = (0,3), ha = "center")
         except ValueError:
             pass
+plt.xlabel(column[0])
+plt.ylabel(column[1])
 
-plt.xlabel('PE')
-plt.ylabel('PB')
+
 
 plt.grid()
 plt.show()  

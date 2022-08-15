@@ -17,3 +17,5 @@ class organize:
         #saves new data to stock_list.csv
         df = pd.DataFrame(csvData)
         df.to_csv('stock_list.csv', encoding='utf-8')
+
+        return [df.columns[1], df.columns[3]]
