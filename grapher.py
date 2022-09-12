@@ -1,22 +1,24 @@
 import csv
 import matplotlib.pyplot as plt
-
+import os
 #import from organizer.py
 from organizer import organize
 
 import statistics 
 
 #import headers
-xvar = 'P/E (F1)'
-yvar = 'This Yr`s Est.d Growth (F(1)/F(0))'
+xvar = 'Current ROI (TTM)'
+yvar = '% Price Change (1 Week)'
 symbol = 'Ticker'
 sector = 'Sector'
 
-#input UNORGANIZED csv file, in the format ("symbol", "peRatio", "stockPrice", "pbRatio")
-column = organize.main('screener.csv', xvar)
 
-#organized file
-file = 'stock_list.csv'
+
+
+file = [f for f in os.listdir('.') if f.endswith('.csv')]
+file = str(file[0])
+
+column = organize.main(file, xvar)
 
 plt.rcParams['figure.figsize'] = 30, 10
 
@@ -54,5 +56,13 @@ for x in range(len(x_avg)):
 
 plt.title(xvar + ', ' + yvar, fontsize = 20)
 plt.grid()
-#plt.savefig('fig.png')
-plt.show()
+
+tmp = os.listdir('./figs')
+if len(tmp) == 0:
+  fig_name = './figs/fig.png'
+else:
+  fig_name = './figs/fig ' + '(' + str(len(tmp)) + ').png'
+plt.savefig(fig_name)
+
+os.remove('stock_list.csv')
+#plt.show()
