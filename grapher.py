@@ -7,8 +7,8 @@ from organizer import organize
 import statistics 
 
 #import headers
-xvar = 'Current ROI (TTM)'
-yvar = '% Price Change (1 Week)'
+xvar = 'Price/Book'
+yvar = 'PEG Ratio'
 symbol = 'Ticker'
 sector = 'Sector'
 
@@ -62,6 +62,7 @@ if len(tmp) == 0:
   fig_name = './figs/fig.png'
 else:
   fig_name = './figs/fig ' + '(' + str(len(tmp)) + ').png'
+
 plt.savefig(fig_name)
 
 os.remove('stock_list.csv')
